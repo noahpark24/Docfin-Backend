@@ -2,7 +2,7 @@ import { Column, Model, Table, DataType } from 'sequelize-typescript';
 import { v4 as uuidv4 } from 'uuid';
 
 @Table({
-  tableName: 'spends',
+  tableName: 'movements',
 })
 export class MovementsModel extends Model {
   @Column({
@@ -22,7 +22,7 @@ export class MovementsModel extends Model {
   name: string;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     allowNull: false,
   })
   amount: number;

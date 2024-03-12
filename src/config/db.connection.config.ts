@@ -1,4 +1,8 @@
 import { SequelizeModule } from '@nestjs/sequelize';
+//Models
+import { IncomesModel } from 'src/incomes/incomes-model/incomes-model';
+import { SpendsModel } from 'src/spends/spends-model/spends-model';
+import { MovementsModel } from 'src/periodizated-movement/movement-model/movement-model';
 
 export const DbConectionConfig = SequelizeModule.forRoot({
   dialect: 'postgres',
@@ -7,7 +11,7 @@ export const DbConectionConfig = SequelizeModule.forRoot({
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  models: [],
+  models: [IncomesModel, SpendsModel, MovementsModel],
   autoLoadModels: true,
   synchronize: true,
 });
