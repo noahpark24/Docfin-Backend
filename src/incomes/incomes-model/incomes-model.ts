@@ -22,7 +22,7 @@ export class IncomesModel extends Model {
   name: string;
 
   @Column({
-    type: DataType.NUMBER,
+    type: DataType.INTEGER,
     allowNull: false,
   })
   amount: number;
@@ -32,13 +32,4 @@ export class IncomesModel extends Model {
     allowNull: false,
   })
   date: string;
-
-  // @Column({
-  //   type: DataType.STRING,
-  //   validate: {
-  //     isIn: [['PENDING', 'IN_PROGRESS', 'DONE']],
-  //   },
-  //   defaultValue: 'PENDING',
-  // })
-  // state: string;
 }
